@@ -97,6 +97,7 @@ public class JdbcPetRepositoryImpl implements PetRepository {
         } catch (EmptyResultDataAccessException ex) {
             throw new ObjectRetrievalFailureException(Pet.class, id);
         }
+        @SuppressWarnings("null")
         Owner owner = this.ownerRepository.findById(ownerId);
         return EntityUtils.getById(owner.getPets(), Pet.class, id);
     }
@@ -130,8 +131,8 @@ public class JdbcPetRepositoryImpl implements PetRepository {
 	@Override
 	public Collection<Pet> findAll() throws DataAccessException {
 		Map<String, Object> params = new HashMap<>();
-		Collection<Pet> pets = new ArrayList<Pet>();
-		Collection<JdbcPet> jdbcPets = new ArrayList<JdbcPet>();
+		Collection<Pet> pets = new ArrayList<>();
+		Collection<JdbcPet> jdbcPets = new ArrayList<>();
 		jdbcPets = this.namedParameterJdbcTemplate
 				.query("SELECT pets.id as pets_id, name, birth_date, type_id, owner_id FROM pets",
 				params,

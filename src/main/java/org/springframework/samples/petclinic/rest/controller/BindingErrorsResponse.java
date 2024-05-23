@@ -42,7 +42,8 @@ public class BindingErrorsResponse {
         this(null, id);
     }
 
-    public BindingErrorsResponse(Integer pathId, Integer bodyId) {
+    @SuppressWarnings("null")
+	public BindingErrorsResponse(Integer pathId, Integer bodyId) {
         boolean onlyBodyIdSpecified = pathId == null && bodyId != null;
         if (onlyBodyIdSpecified) {
             addBodyIdError(bodyId, "must not be specified");
@@ -62,7 +63,7 @@ public class BindingErrorsResponse {
         addError(error);
     }
 
-	private final List<BindingError> bindingErrors = new ArrayList<BindingError>();
+	private final List<BindingError> bindingErrors = new ArrayList<>();
 
 	public void addError(BindingError bindingError) {
 		this.bindingErrors.add(bindingError);

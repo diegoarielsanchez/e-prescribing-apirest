@@ -58,7 +58,7 @@ public class Vet extends Person {
         PropertyComparator.sort(sortedSpecs, new MutableSortDefinition("name", true, true));
         return Collections.unmodifiableList(sortedSpecs);
     }
-
+    // Not inlclude in Spring-Petclinic-Microsevices
     public void setSpecialties(List<Specialty> specialties) {
         this.specialties = new HashSet<>(specialties);
     }
@@ -71,7 +71,7 @@ public class Vet extends Person {
     public void addSpecialty(Specialty specialty) {
         getSpecialtiesInternal().add(specialty);
     }
-
+    // Not inlclude in Spring-Petclinic-Microsevices
     public void clearSpecialties() {
         getSpecialtiesInternal().clear();
     }

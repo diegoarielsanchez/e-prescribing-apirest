@@ -141,8 +141,9 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
 
     protected class JdbcVisitRowMapperExt implements RowMapper<Visit> {
 
+        @SuppressWarnings("null")
         @Override
-        public Visit mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Visit mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
             Visit visit = new Visit();
             JdbcPet pet = new JdbcPet();
             PetType petType = new PetType();

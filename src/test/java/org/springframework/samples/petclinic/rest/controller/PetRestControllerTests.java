@@ -238,6 +238,7 @@ class PetRestControllerTests {
         PetDto newPet = pets.get(0);
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
+        @SuppressWarnings("unused")
         String newPetAsJSON = mapper.writeValueAsString(newPet);
         given(this.clinicService.findPetById(999)).willReturn(null);
         this.mockMvc.perform(post("/api/pets")

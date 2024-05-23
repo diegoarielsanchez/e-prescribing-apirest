@@ -14,6 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @ConditionalOnProperty(name = "petclinic.security.enable", havingValue = "false")
 public class DisableSecurityConfig {
 
+    @SuppressWarnings("removal")
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // @formatter:off

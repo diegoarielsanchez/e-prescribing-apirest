@@ -89,7 +89,8 @@ public class JdbcVetRepositoryImpl implements VetRepository {
             final List<Integer> vetSpecialtiesIds = this.jdbcTemplate.query(
                 "SELECT specialty_id FROM vet_specialties WHERE vet_id=?",
                 new BeanPropertyRowMapper<Integer>() {
-                    @Override
+                    @SuppressWarnings("null")
+					@Override
                     public Integer mapRow(ResultSet rs, int row) throws SQLException {
                         return rs.getInt(1);
                     }
@@ -103,6 +104,7 @@ public class JdbcVetRepositoryImpl implements VetRepository {
         return vets;
     }
     
+	@SuppressWarnings("null")
 	@Override
 	public Vet findById(int id) throws DataAccessException {
 		Vet vet;
