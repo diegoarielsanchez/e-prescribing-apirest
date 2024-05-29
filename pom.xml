@@ -4,20 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework.samples</groupId>
-    <artifactId>spring-petclinic-rest</artifactId>
+    <artifactId>spring-eprescribing-rest</artifactId>
     <version>3.2.1</version>
 
-    <description>REST version of the Spring Petclinic sample application</description>
-    <url>https://spring-petclinic.github.io/</url>
+    <description>REST version of the Spring ePrescribing application</description>
+    <url>https://spring-eprescribing.github.io/</url>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.1</version>
+        <version>3.2.6</version>
         <relativePath/> <!-- lookup parent from Maven repository -->
     </parent>
 
     <properties>
+        <project.basedir>C:\Users\dsanchez\source\repos\e-prescribing-backend</project.basedir>
+        <project.basedir>C:\Users\dsanchez\source\repos\e-prescribing-backend</project.basedir>
         <!-- Third-party libraries -->
         <spring-data-jdbc.version>1.2.1.RELEASE</spring-data-jdbc.version>
         <springdoc-openapi-ui.version>2.0.2</springdoc-openapi-ui.version>
@@ -190,8 +192,8 @@
                 <configuration>
                     <excludes>
                         <!-- Generated code -->
-                        <exclude>**/org/springframework/samples/petclinic/rest/dto/**</exclude>
-                        <exclude>**/org/springframework/samples/petclinic/rest/api/**</exclude>
+                        <exclude>**/org/springframework/das/eprescribing/rest/dto/**</exclude>
+                        <exclude>**/org/springframework/das/eprescribing/rest/api/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -269,16 +271,16 @@
 
                             <!-- Only enabling model andopenapi-generator-maven-plugin API generation -->
                             <modelNameSuffix>Dto</modelNameSuffix>
-                            <apiPackage>org.springframework.samples.petclinic.rest.api</apiPackage>
+                            <apiPackage>org.springframework.das.eprescribing.rest.api</apiPackage>
                             <generateModels>true</generateModels>
-                            <modelPackage>org.springframework.samples.petclinic.rest.dto</modelPackage>
+                            <modelPackage>org.springframework.das.eprescribing.rest.dto</modelPackage>
                             <!--
                             <generateSupportingFiles>true</generateSupportingFiles>
                             <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
                             -->
                             <generateApis>true</generateApis>
                             <configOptions>
-                                <!-- RestController implementation is provided by Petclinic developers -->
+                                <!-- RestController implementation is provided by eprescribing developers -->
                                 <interfaceOnly>true</interfaceOnly>
                                 <!-- Activating Java 8 features -->
                                 <performBeanValidation>true</performBeanValidation>
