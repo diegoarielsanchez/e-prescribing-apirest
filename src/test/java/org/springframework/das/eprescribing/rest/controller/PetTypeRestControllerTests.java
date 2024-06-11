@@ -26,8 +26,6 @@ import org.springframework.http.MediaType;
 import org.springframework.das.eprescribing.mapper.PetTypeMapper;
 import org.springframework.das.eprescribing.model.PetType;
 import org.springframework.das.eprescribing.rest.advice.ExceptionControllerAdvice;
-import org.springframework.das.eprescribing.rest.controller.PetTypeRestController;
-import org.springframework.das.eprescribing.rest.dto.PetTypeDto;
 import org.springframework.das.eprescribing.service.ClinicService;
 import org.springframework.das.eprescribing.service.clinicService.ApplicationTestConfig;
 import org.springframework.security.test.context.support.WithMockUser;

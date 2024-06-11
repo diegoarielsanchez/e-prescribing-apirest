@@ -20,7 +20,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
@@ -56,8 +55,7 @@ public class ClinicServiceImpl implements ClinicService {
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
 
-    @Autowired
-     public ClinicServiceImpl(
+    public ClinicServiceImpl(
        		 PetRepository petRepository,
     		 VetRepository vetRepository,
     		 OwnerRepository ownerRepository,

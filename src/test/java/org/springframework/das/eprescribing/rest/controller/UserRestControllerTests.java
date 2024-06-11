@@ -10,7 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.das.eprescribing.mapper.UserMapper;
 import org.springframework.das.eprescribing.model.User;
 import org.springframework.das.eprescribing.rest.advice.ExceptionControllerAdvice;
-import org.springframework.das.eprescribing.rest.controller.UserRestController;
 import org.springframework.das.eprescribing.service.UserService;
 import org.springframework.das.eprescribing.service.clinicService.ApplicationTestConfig;
 import org.springframework.security.test.context.support.WithMockUser;

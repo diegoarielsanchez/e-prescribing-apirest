@@ -31,7 +31,6 @@ import org.springframework.das.eprescribing.model.Pet;
 import org.springframework.das.eprescribing.model.PetType;
 import org.springframework.das.eprescribing.model.Visit;
 import org.springframework.das.eprescribing.rest.advice.ExceptionControllerAdvice;
-import org.springframework.das.eprescribing.rest.controller.VisitRestController;
 import org.springframework.das.eprescribing.service.ClinicService;
 import org.springframework.das.eprescribing.service.clinicService.ApplicationTestConfig;
 import org.springframework.security.test.context.support.WithMockUser;

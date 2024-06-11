@@ -26,7 +26,6 @@ import org.springframework.http.MediaType;
 import org.springframework.das.eprescribing.mapper.SpecialtyMapper;
 import org.springframework.das.eprescribing.model.Specialty;
 import org.springframework.das.eprescribing.rest.advice.ExceptionControllerAdvice;
-import org.springframework.das.eprescribing.rest.controller.SpecialtyRestController;
 import org.springframework.das.eprescribing.service.ClinicService;
 import org.springframework.das.eprescribing.service.clinicService.ApplicationTestConfig;
 import org.springframework.security.test.context.support.WithMockUser;

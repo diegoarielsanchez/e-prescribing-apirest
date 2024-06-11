@@ -15,7 +15,6 @@
  */
 package org.springframework.das.eprescribing.jdbc;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -59,7 +58,6 @@ public class JdbcOwnerRepositoryImpl implements OwnerRepository {
 
     private SimpleJdbcInsert insertOwner;
 
-    @Autowired
     public JdbcOwnerRepositoryImpl(DataSource dataSource) {
 
         this.insertOwner = new SimpleJdbcInsert(dataSource)
@@ -111,6 +109,7 @@ public class JdbcOwnerRepositoryImpl implements OwnerRepository {
         return owner;
     }
 
+    @SuppressWarnings("null")
     public void loadPetsAndVisits(final Owner owner) {
         Map<String, Object> params = new HashMap<>();
         params.put("id", owner.getId());

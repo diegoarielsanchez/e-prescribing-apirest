@@ -23,7 +23,6 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -61,10 +60,10 @@ public class JdbcPetRepositoryImpl implements PetRepository {
 
     private OwnerRepository ownerRepository;
 
+    @SuppressWarnings("unused")
     private VisitRepository visitRepository;
 
 
-    @Autowired
     public JdbcPetRepositoryImpl(DataSource dataSource,
     		OwnerRepository ownerRepository,
     		VisitRepository visitRepository) {
@@ -97,6 +96,7 @@ public class JdbcPetRepositoryImpl implements PetRepository {
         } catch (EmptyResultDataAccessException ex) {
             throw new ObjectRetrievalFailureException(Pet.class, id);
         }
+        @SuppressWarnings("null")
         Owner owner = this.ownerRepository.findById(ownerId);
         return EntityUtils.getById(owner.getPets(), Pet.class, id);
     }

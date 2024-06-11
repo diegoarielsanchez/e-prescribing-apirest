@@ -15,7 +15,6 @@
  */
 package org.springframework.das.eprescribing.jdbc;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -55,7 +54,6 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
     protected SimpleJdbcInsert insertVisit;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    @Autowired
     public JdbcVisitRepositoryImpl(DataSource dataSource) {
         this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
 
@@ -141,6 +139,7 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
 
     protected class JdbcVisitRowMapperExt implements RowMapper<Visit> {
 
+        @SuppressWarnings("null")
         @Override
         public Visit mapRow(ResultSet rs, int rowNum) throws SQLException {
             Visit visit = new Visit();

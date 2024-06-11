@@ -22,7 +22,6 @@ import org.springframework.das.eprescribing.model.Visit;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * {@link RowMapper} implementation mapping data from a {@link ResultSet} to the corresponding properties
@@ -31,7 +30,7 @@ import java.util.Date;
 class JdbcVisitRowMapper implements RowMapper<Visit> {
 
     @Override
-    public Visit mapRow(ResultSet rs, int row) throws SQLException {
+    public Visit mapRow(@SuppressWarnings("null") ResultSet rs, int row) throws SQLException {
         Visit visit = new Visit();
         visit.setId(rs.getInt("visit_id"));
         visit.setDate(rs.getObject("visit_date", LocalDate.class));

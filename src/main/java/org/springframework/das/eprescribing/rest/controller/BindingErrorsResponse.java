@@ -42,7 +42,8 @@ public class BindingErrorsResponse {
         this(null, id);
     }
 
-    public BindingErrorsResponse(Integer pathId, Integer bodyId) {
+    @SuppressWarnings("null")
+	public BindingErrorsResponse(Integer pathId, Integer bodyId) {
         boolean onlyBodyIdSpecified = pathId == null && bodyId != null;
         if (onlyBodyIdSpecified) {
             addBodyIdError(bodyId, "must not be specified");

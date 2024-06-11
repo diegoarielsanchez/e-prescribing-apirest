@@ -25,7 +25,6 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -61,7 +60,6 @@ public class JdbcVetRepositoryImpl implements VetRepository {
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	private SimpleJdbcInsert insertVet;
 
-    @Autowired
     public JdbcVetRepositoryImpl(DataSource dataSource, JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
 		this.insertVet = new SimpleJdbcInsert(dataSource).withTableName("vets").usingGeneratedKeyColumns("id");
@@ -89,7 +87,8 @@ public class JdbcVetRepositoryImpl implements VetRepository {
             final List<Integer> vetSpecialtiesIds = this.jdbcTemplate.query(
                 "SELECT specialty_id FROM vet_specialties WHERE vet_id=?",
                 new BeanPropertyRowMapper<Integer>() {
-                    @Override
+                    @SuppressWarnings("null")
+					@Override
                     public Integer mapRow(ResultSet rs, int row) throws SQLException {
                         return rs.getInt(1);
                     }
@@ -103,6 +102,7 @@ public class JdbcVetRepositoryImpl implements VetRepository {
         return vets;
     }
     
+	@SuppressWarnings("null")
 	@Override
 	public Vet findById(int id) throws DataAccessException {
 		Vet vet;
@@ -121,8 +121,9 @@ public class JdbcVetRepositoryImpl implements VetRepository {
 					"SELECT specialty_id FROM vet_specialties WHERE vet_id=:id",
 					vet_params,
 					new BeanPropertyRowMapper<Integer>() {
+						@SuppressWarnings("null")
 						@Override
-						public Integer mapRow(ResultSet rs, int row) throws SQLException {
+						public Integer mapRow(@SuppressWarnings("null") ResultSet rs, int row) throws SQLException {
 							return rs.getInt(1);
 						}
 					});

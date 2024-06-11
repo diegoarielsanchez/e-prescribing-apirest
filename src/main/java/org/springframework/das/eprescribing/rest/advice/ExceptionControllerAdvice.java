@@ -74,7 +74,9 @@ public class ExceptionControllerAdvice {
     }
 
     private class ErrorInfo {
+        @SuppressWarnings("unused")
         public final String className;
+        @SuppressWarnings("unused")
         public final String exMessage;
 
         public ErrorInfo(Exception ex) {

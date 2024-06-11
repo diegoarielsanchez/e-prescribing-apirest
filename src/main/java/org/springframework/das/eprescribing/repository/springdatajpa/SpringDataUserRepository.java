@@ -6,6 +6,6 @@ import org.springframework.das.eprescribing.model.User;
 import org.springframework.das.eprescribing.repository.UserRepository;
 
 @Profile("spring-data-jpa")
-public interface SpringDataUserRepository extends UserRepository, Repository<User, Integer>  {
+public interface SpringDataUserRepository extends UserRepository, Repository<User, String>  {
 
 }

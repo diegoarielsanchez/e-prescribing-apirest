@@ -26,10 +26,11 @@ import java.util.Date;
  * {@link RowMapper} implementation mapping data from a {@link ResultSet} to the corresponding properties
  * of the {@link JdbcPet} class.
  */
+@SuppressWarnings("unused")
 public class JdbcPetRowMapper implements RowMapper<JdbcPet> {
 
     @Override
-    public JdbcPet mapRow(ResultSet rs, int rownum) throws SQLException {
+    public JdbcPet mapRow(@SuppressWarnings("null") ResultSet rs, int rownum) throws SQLException {
         JdbcPet pet = new JdbcPet();
         pet.setId(rs.getInt("pets_id"));
         pet.setName(rs.getString("name"));

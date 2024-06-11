@@ -15,8 +15,6 @@
  */
 package org.springframework.das.eprescribing.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import java.time.LocalDate;

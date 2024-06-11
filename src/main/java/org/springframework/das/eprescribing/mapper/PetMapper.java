@@ -9,6 +9,7 @@ import org.springframework.das.eprescribing.model.Pet;
 import org.springframework.das.eprescribing.model.PetType;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Map Pet & PetDto using mapstruct
@@ -21,7 +22,7 @@ public interface PetMapper {
 
     Collection<PetDto> toPetsDto(Collection<Pet> pets);
 
-    Collection<Pet> toPets(Collection<PetDto> pets);
+    Collection<Pet> toPets(Collection<Pet> pets);
 
     Pet toPet(PetDto petDto);
 
